@@ -1,1 +1,12 @@
-asd
+#!/bin/bash
+PIES="rpi01 rpi02 rpi03 rpi04 rpi05 rpi06 rpi07 rpi08 rpi09 rpi10 rpi11 rpi12 rpi14 rpi14 rpi15 rpi16 rpi17 rpi18 rpi19 rpi20"
+for i in $PIES
+do
+ping $i -c 1 &> /dev/null
+if [ $? -eq 0 ]; then
+echo $i "alive"
+else
+echo $i "not alive"
+fi 
+done 
+
